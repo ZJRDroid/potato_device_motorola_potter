@@ -425,6 +425,7 @@ PRODUCT_PACKAGES += \
     wcnss_service \
     wificond \
     wifilogd \
+    libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -452,5 +453,9 @@ PRODUCT_COPY_FILES += \
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+PRODUCT_BOARD_PLATFORM := msm8996
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 $(call inherit-product, vendor/motorola/potter/potter-vendor.mk)
